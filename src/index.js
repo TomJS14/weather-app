@@ -1,5 +1,5 @@
 import "./styles.css";
-import "./images/background-mountain.jpg";
+import "./images/background-mountain-downsized.jpg";
 import "./images/humidity.svg";
 import "./images/1189.svg"; // rain
 import "./images/wind.svg";
@@ -83,7 +83,7 @@ tempScale.addEventListener("change", () => {
 async function getWeather(location) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=5566193aad5d49be87572056231107&q=${location}&days=7&aqi=no`,
+      `https://api.weatherapi.com/v1/forecast.json?key=5566193aad5d49be87572056231107&q=${location}&days=7&aqi=no`,
       { mode: "cors" },
     );
     const weatherData = await response.json();
