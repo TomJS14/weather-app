@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer="defer" src="runtime.bundle.js"></script>
+    <script defer="defer" src="index.bundle.js"></script>
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <img src="./images/background-mountain.jpg" class="background-img"></img>
+    <main>
+      <div class="weather-container">
+        <div class="current-weather">
+          <p data-current-location></p>
+          <p data-date-and-time></p>
+          <p data-current-temperature></p>
+          <p data-current-weather-description></p>
+
+          <img class="weather-icon" src="" />
+          <form class="location-form" action="#">
+            <input
+            class="form_field"
+              data-weather-search
+              type="text"
+              placeholder="Search Location"
+            />
+            <!-- <button>Search</button> -->
+            <br />
+            <span data-error class="hide-error"><!-- Error Message --></span>
+          </form>
+        </div>
+        <div class="button-container">
+          <label class="switch">
+            <input data-temp-scale type="checkbox" name="temp-scale" />
+            <span class="slider round"></span>
+            <span class="labels" data-on="°F" data-off="°C"></span>
+          </label>
+          </div>
+        <div class="additional-info">
+          <div class="box">
+            <p data-feels-like></p>
+            <img
+              class="icon"
+              data-feels-like-icon
+              src="./images/thermometer.svg"
+            />
+          </div>
+          <div class="box">
+            <p data-humidity></p>
+            <img class="icon" data-humidity-icon src="./images/humidity.svg" />
+          </div>
+          <div class="box">
+            <p data-rain-chance></p>
+            <img data-rain-chance-icon src="./images/1189.svg" class="icon" />
+          </div>
+          <div class="box">
+            <p data-wind-chance></p>
+            <img data-wind-chance-icon src="./images/wind.svg" class="icon" />
+          </div>
+        </div>
+      </div>
+
+        
+      
+      
+      <div class="forecast-container">
+        <div class="forecast-day" data-sunday>
+          <p>Sunday</p>
+          <p class="high" data-sunday-temp-high></p>
+          <p class="low" data-sunday-temp-low></p>
+          <img data-sunday-icon class="forecast-icon" src="" alt="" />
+        </div>
+        <div class="forecast-day" data-monday>
+          <p>Monday</p>
+          <p class="high" data-monday-temp-high></p>
+          <p class="low" data-monday-temp-low></p>
+          <img data-monday-icon class="forecast-icon" src="" alt="" />
+        </div>
+        <div class="forecast-day" data-tuesday>
+          <p>Tuesday</p>
+          <p class="high" data-tuesday-temp-high></p>
+          <p class="low" data-tuesday-temp-low></p>
+          <img data-tuesday-icon class="forecast-icon" src="" alt="" />
+        </div>
+        <div class="forecast-day" data-wednesday>
+          <p>Wednesday</p>
+          <p class="high" data-wednesday-temp-high></p>
+          <p class="low" data-wednesday-temp-low></p>
+          <img data-wednesday-icon class="forecast-icon" src="" alt="" />
+        </div>
+        <div class="forecast-day" data-thursday>
+          <p>Thursday</p>
+          <p class="high" data-thursday-temp-high></p>
+          <p class="low" data-thursday-temp-low></p>
+          <img data-thursday-icon class="forecast-icon" src="" alt="" />
+        </div>
+        <div class="forecast-day" data-friday>
+          <p>Friday</p>
+          <p class="high" data-friday-temp-high></p>
+          <p class="low" data-friday-temp-low></p>
+          <img data-friday-icon class="forecast-icon" src="" alt="" />
+        </div>
+        <div class="forecast-day" data-saturday>
+          <p>Saturday</p>
+          <p class="high" data-saturday-temp-high></p>
+          <p class="low" data-saturday-temp-low></p>
+          <img data-saturday-icon class="forecast-icon" src="" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>Powered by&nbsp;</span>
+    <a href="https://www.weatherapi.com/">WeatherAPI.com</a>
+    </footer>
+  </body>
+</html>
