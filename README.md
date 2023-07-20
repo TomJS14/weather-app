@@ -13,6 +13,7 @@ _Functionality to add_
 1. Add Light and dark mode toggle
 2. Add toggle for Hourly forecast
 3. Add additional Icons for all weather conditions (some missing)
+4. Look into code splitting for better load performance
 
 **What I've learnt**
 

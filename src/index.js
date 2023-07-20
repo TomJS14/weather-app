@@ -1,5 +1,5 @@
 import "./styles.css";
-import "./images/background-mountain-downsized.jpg";
+import "./images/background-mountain_2.jpg";
 import "./images/humidity.svg";
 import "./images/1189.svg"; // rain
 import "./images/wind.svg";

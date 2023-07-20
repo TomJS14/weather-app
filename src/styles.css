@@ -146,7 +146,6 @@ body {
 
 main {
   min-height: 100vh;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   gap: 8rem;
@@ -174,7 +173,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  align-items: center;
 }
 
 .display-error {
@@ -201,13 +199,13 @@ main {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15px;
   padding: 10px 20px 0 0;
 }
 
 .box {
   display: flex;
-  gap: 8px;
+  gap: 15px;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
@@ -221,11 +219,12 @@ main {
 }
 
 .high {
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
 .low {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
 .forecast-container {
@@ -294,6 +293,7 @@ footer {
   background-color: transparent;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  outline: 1px solid white;
 }
 
 .slider:before {
@@ -377,6 +377,8 @@ input:checked + .slider:before {
 /* Style text input */
 
 .form_field {
+  width: 10rem;
+  height: 1.5rem;
   border: none;
   outline: 2px solid white;
   border-radius: 3px;
@@ -386,6 +388,7 @@ input:checked + .slider:before {
 
 .form_field::placeholder {
   color: white;
+  padding-left: 5px;
 }
 
 footer {
@@ -422,6 +425,7 @@ body {
   }
 
   .current-weather {
+    font-size: 1rem;
     align-self: center;
     align-items: center;
   }
@@ -429,8 +433,9 @@ body {
   .additional-info {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 40px;
     justify-content: center;
+    padding-top: 20px;
   }
 
   .box {
@@ -471,6 +476,7 @@ body {
   }
 
   .current-weather {
+    font-size: 1rem;
     padding-top: 20px;
     align-self: center;
     align-items: center;
@@ -478,6 +484,7 @@ body {
 
   .additional-info {
     flex-direction: row;
+    justify-content: center;
   }
 
   .forecast-container {
@@ -512,6 +519,7 @@ body {
   }
 
   .current-weather {
+    font-size: 1.3rem;
     padding-left: 20px;
     padding-top: 20px;
   }
