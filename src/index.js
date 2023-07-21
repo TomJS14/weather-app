@@ -103,12 +103,8 @@ function setWeather(weatherData) {
   // Format the date before setting
   const localTime = new Date(weatherData.location.localtime);
   const formattedDateTime = localTime.toLocaleString("en-GB", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
+    dateStyle: "medium",
+    timeStyle: "short",
   });
   // Set content of current weather
   currentTempDisplay.textContent = `${
