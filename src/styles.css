@@ -146,6 +146,8 @@ body {
 
 html {
   overflow: hidden;
+  overscroll-behavior: none;
+
   height: 100%;
 }
 

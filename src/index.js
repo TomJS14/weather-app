@@ -90,7 +90,7 @@ async function getWeather(location) {
     setWeather(weatherData);
     errorSpan.classList.replace("display-error", "hide-error");
   } catch (err) {
-    errorSpan.textContent = `Oops, "${location}" is not a valid location, try again`;
+    /* errorSpan.textContent = `Oops, "${location}" is not a valid location, try again`; */
     errorSpan.classList.replace("hide-error", "display-error");
   }
 }
@@ -125,65 +125,36 @@ function setWeather(weatherData) {
   rainChance.textContent = `Chance of rain: ${weatherData.forecast.forecastday[0].day.daily_chance_of_rain} %`;
   windChance.textContent = `Wind Speed: ${weatherData.forecast.forecastday[0].day.maxwind_mph} mph`;
 
+  const forecastDays = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+
   // set content of DAILY forecast container (Add later for hourly)
-  SundayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[0].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  SundayTempLow.textContent = `${
-    weatherData.forecast.forecastday[0].day[`mintemp${scale}`]
-  } ${displayScale}`;
 
-  mondayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[1].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  mondayTempLow.textContent = `${
-    weatherData.forecast.forecastday[1].day[`mintemp${scale}`]
-  } ${displayScale}`;
-
-  tuesdayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[2].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  tuesdayTempLow.textContent = `${
-    weatherData.forecast.forecastday[2].day[`mintemp${scale}`]
-  } ${displayScale}`;
-
-  wednesdayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[3].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  wednesdayTempLow.textContent = `${
-    weatherData.forecast.forecastday[3].day[`mintemp${scale}`]
-  } ${displayScale}`;
-
-  thursdayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[4].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  thursdayTempLow.textContent = `${
-    weatherData.forecast.forecastday[4].day[`mintemp${scale}`]
-  } ${displayScale}`;
-
-  fridayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[5].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  fridayTempLow.textContent = `${
-    weatherData.forecast.forecastday[5].day[`mintemp${scale}`]
-  } ${displayScale}`;
-
-  saturdayTempHigh.textContent = `${
-    weatherData.forecast.forecastday[6].day[`maxtemp${scale}`]
-  } ${displayScale}`;
-  saturdayTempLow.textContent = `${
-    weatherData.forecast.forecastday[6].day[`mintemp${scale}`]
-  } ${displayScale}`;
-
-  // Set Icons
-
-  SundayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[0].day.condition.code}.svg`;
-  mondayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[1].day.condition.code}.svg`;
-  tuesdayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[2].day.condition.code}.svg`;
-  wednesdayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[3].day.condition.code}.svg`;
-  thursdayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[4].day.condition.code}.svg`;
-  fridayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[5].day.condition.code}.svg`;
-  saturdayWeatherIcon.src = `./images/${weatherData.forecast.forecastday[6].day.condition.code}.svg`;
+  forecastDays.forEach((day, index) => {
+    const dayElement = document.querySelector(`[data-${day}]`);
+    if (weatherData.forecast.forecastday[index]) {
+      dayElement.style.display = "block";
+      dayElement.querySelector("p.high").textContent = `${
+        weatherData.forecast.forecastday[index].day[`maxtemp${scale}`]
+      } ${displayScale}`;
+      dayElement.querySelector("p.low").textContent = `${
+        weatherData.forecast.forecastday[index].day[`mintemp${scale}`]
+      } ${displayScale}`;
+      dayElement.querySelector(
+        ".forecast-icon",
+      ).src = `./images/${weatherData.forecast.forecastday[index].day.condition.code}.svg`;
+    } else {
+      // If there's no data for the day, hide the forecast day element
+      dayElement.style.display = "none";
+    }
+  });
 
   locationForm.reset();
 }
