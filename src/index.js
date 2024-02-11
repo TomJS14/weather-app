@@ -42,29 +42,6 @@ const locationForm = document.querySelector(".location-form");
 
 const errorSpan = document.querySelector("span");
 
-// Forecast elements
-const SundayTempHigh = document.querySelector("[data-sunday-temp-high]");
-const SundayTempLow = document.querySelector("[data-sunday-temp-low]");
-const SundayWeatherIcon = document.querySelector("[data-sunday-icon");
-const mondayTempHigh = document.querySelector("[data-monday-temp-high]");
-const mondayTempLow = document.querySelector("[data-monday-temp-low]");
-const mondayWeatherIcon = document.querySelector("[data-monday-icon");
-const tuesdayTempHigh = document.querySelector("[data-tuesday-temp-high]");
-const tuesdayTempLow = document.querySelector("[data-tuesday-temp-low]");
-const tuesdayWeatherIcon = document.querySelector("[data-tuesday-icon");
-const wednesdayTempHigh = document.querySelector("[data-wednesday-temp-high]");
-const wednesdayTempLow = document.querySelector("[data-wednesday-temp-low]");
-const wednesdayWeatherIcon = document.querySelector("[data-wednesday-icon");
-const thursdayTempHigh = document.querySelector("[data-thursday-temp-high]");
-const thursdayTempLow = document.querySelector("[data-thursday-temp-low]");
-const thursdayWeatherIcon = document.querySelector("[data-thursday-icon");
-const fridayTempHigh = document.querySelector("[data-friday-temp-high]");
-const fridayTempLow = document.querySelector("[data-friday-temp-low]");
-const fridayWeatherIcon = document.querySelector("[data-friday-icon");
-const saturdayTempHigh = document.querySelector("[data-saturday-temp-high]");
-const saturdayTempLow = document.querySelector("[data-saturday-temp-low]");
-const saturdayWeatherIcon = document.querySelector("[data-saturday-icon");
-
 searchInput.addEventListener("change", (e) => {
   e.preventDefault();
   locationResult = e.target.value;
